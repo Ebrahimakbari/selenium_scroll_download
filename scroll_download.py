@@ -4,10 +4,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select ,WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.chrome.service import Service
 import time , random ,requests
 
 links_list = []
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(service=Service('../chromedriver.exe')) # add your driver path
 driver.get('https://www.digikala.com/')
 driver.maximize_window()
 wait = WebDriverWait(driver, 20)
